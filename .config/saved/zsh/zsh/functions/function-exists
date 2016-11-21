@@ -1,0 +1,6 @@
+local -a files
+# This expands occurrences of $1 anywhere in $fpath,
+# removing files that don't exist.
+files=(${^fpath}/$1(N))
+# Success if any files exist.
+(( ${#files} ))

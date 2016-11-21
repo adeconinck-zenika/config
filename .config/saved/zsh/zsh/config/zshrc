@@ -1,0 +1,11 @@
+fpath=(~/.config/zsh/functions ~/.config/zsh/functions/completion $fpath)
+
+#unset jayatana option user agent
+unset JAVA_TOOL_OPTIONS
+
+source ~/.config/sh/aliases.sh
+
+source ~/.config/zsh/config/history.zsh
+source ~/.config/zsh/config/prompt.zsh
+source ~/.config/zsh/config/completion.zsh
+source ~/.config/zsh/config/keybinding.zsh

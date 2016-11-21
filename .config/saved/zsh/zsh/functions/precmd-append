@@ -1,0 +1,21 @@
+#!/bin/zsh
+#set -e -o pipefail
+
+eval set -- "`getopt -o a -l autoload -n precmd-append -- \"$@\"`"
+
+local load=false
+while true; do
+  case $1 in
+    -a|--autoload) load=true;;
+    --) shift; break;;
+  esac
+  shift
+done
+
+if [[ $# < 1 ]];then return 1;fi
+
+if $load;then autoload -Uz $1;fi
+
+if [[ ${precmd_functions[(r)$1]} == "" ]]; then
+  precmd_functions=($precmd_functions $1)
+fi
