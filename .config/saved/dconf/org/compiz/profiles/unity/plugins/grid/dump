@@ -1,0 +1,8 @@
+[/]
+bottom-right-corner-action=3
+bottom-left-corner-action=1
+right-maximize='<Alt><Super>Right'
+top-left-corner-action=7
+left-maximize='<Alt><Super>Left'
+bottom-edge-action=2
+top-right-corner-action=9

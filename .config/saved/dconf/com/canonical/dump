@@ -1,0 +1,17 @@
+[indicator/power]
+icon-policy='charge'
+
+[indicator/datetime]
+show-date=true
+
+[indicator/keyboard]
+visible=false
+
+[unity]
+always-show-menus=false
+
+[unity/webapps]
+preauthorized-domains=@as []
+
+[unity/launcher]
+favorites=['application://gnome-terminal.desktop', 'application://google-chrome.desktop', 'application://jetbrains-idea.desktop', 'application://org.gnome.Nautilus.desktop', 'application://atom.desktop', 'unity://running-apps', 'unity://devices']

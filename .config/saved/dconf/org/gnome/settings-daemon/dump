@@ -1,0 +1,15 @@
+[plugins/power]
+lid-close-battery-action='nothing'
+lid-close-ac-action='nothing'
+
+[plugins/media-keys]
+screenreader=''
+magnifier-zoom-out=''
+logout=''
+terminal='<Super>space'
+magnifier-zoom-in=''
+screensaver='<Super>l'
+magnifier=''
+
+[peripherals/keyboard]
+numlock-state='on'

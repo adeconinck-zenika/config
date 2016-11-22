@@ -1,0 +1,14 @@
+[/]
+urgent-animation=2
+num-launchers=1
+panel-first-menu='<Super>Next'
+spread-app-windows-anywhere='Disabled'
+reveal-pressure=3
+edge-passed-disabled-ms=300
+keyboard-focus='Disabled'
+edge-responsiveness=8.0
+spread-app-windows='Disabled'
+show-desktop-key='<Super>d'
+shortcut-overlay=false
+execute-command='<Super>F2'
+launcher-hide-mode=1

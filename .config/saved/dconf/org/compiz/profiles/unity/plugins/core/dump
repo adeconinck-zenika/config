@@ -1,0 +1,3 @@
+[/]
+active-plugins=['core', 'composite', 'opengl', 'put', 'imgpng', 'compiztoolbox', 'mousepoll', 'move', 'copytex', 'grid', 'regex', 'vpswitch', 'place', 'resize', 'wall', 'unitymtgrabhandles', 'snap', 'animation', 'expo', 'workarounds', 'session', 'fade', 'scale', 'unityshell']
+show-desktop-edge=''
