@@ -1,4 +1,4 @@
-export ZSH=~/.config/zsh/oh-my-zsh
+export ZSH=~/.config/zsh/zinstalls/ohmyzsh
 
 if [ ! -d $ZSH ];then
   git clone git@github.com:robbyrussell/oh-my-zsh.git $ZSH
