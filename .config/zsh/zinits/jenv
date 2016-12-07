@@ -2,7 +2,6 @@ jenvhome=$zinstalls/jenv
 if [ ! -d $jenvhome ];then
   echo "installation de jenv dans $jenvhome"
   git clone https://github.com/gcuisinier/jenv.git $jenvhome
-  # add jenv in path : it was not existing before and has been skipped
   ln -s $jenvhome/bin/jenv ~/bin
 fi
 unset jenvhome
