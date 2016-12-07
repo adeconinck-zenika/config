@@ -13,10 +13,10 @@ fi
 # zsources
 if [ -f $zhome/zsources ];then
   for toSource in $(cat $zhome/zsources 2>/dev/null || echo);do
-    if [ -f $zhome/$toSource ];then
-      source $zhome/$toSource
+    if [ -f $zhome/zinits/$toSource ];then
+      source $zhome/zinits/$toSource
     else
-      echo "$zhome/$toSource not found => not sourced" >2
+      echo "$zhome/zinits/$toSource not found => not sourced" >2
     fi
   done
 fi
