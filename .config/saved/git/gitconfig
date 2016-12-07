@@ -2,7 +2,7 @@
   email = alban.deconinck@zenika.com
   name = alban deconinck
 [core]
-  editor = vim
+  editor = nvim
   autocrlf = input
   excludesfile = /home/alban/.config/git/ignore
 [push]
