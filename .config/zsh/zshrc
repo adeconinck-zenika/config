@@ -1,0 +1,24 @@
+zhome=$(dirname $(realpath ~/$(readlink ~/.zshrc)))
+
+# scan zpath and add to path
+if [ -f $zhome/zpath ];then
+  for pathCandidate in $(cat $zhome/zpath 2>/dev/null || echo);do
+    if [ -d "$pathCandidate" ];then
+      pathCandidate=$(eval echo $pathCandidate)
+      export PATH="$pathCandidate:$PATH"
+    fi
+  done
+fi
+
+# zsources
+if [ -f $zhome/zsources ];then
+  for toSource in $(cat $zhome/zsources 2>/dev/null || echo);do
+    if [ -f $zhome/$toSource ];then
+      source $zhome/$toSource
+    else
+      echo "$zhome/$toSource not found => not sourced" >2
+    fi
+  done
+fi
+
+unset zhome

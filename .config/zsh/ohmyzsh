@@ -1,0 +1,17 @@
+export ZSH=~/.config/zsh/oh-my-zsh
+
+if [ ! -d $ZSH ];then
+  git clone git@github.com:robbyrussell/oh-my-zsh.git $ZSH
+fi
+
+ZSH_THEME="agnoster"
+DEFAULT_USER=alban
+
+HYPHEN_INSENSITIVE="true"
+
+export UPDATE_ZSH_DAYS=1
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
