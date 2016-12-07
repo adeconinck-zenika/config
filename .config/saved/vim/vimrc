@@ -20,7 +20,7 @@ set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-filetype plugin indent on
+" filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
 set expandtab
