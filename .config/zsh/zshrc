@@ -1,4 +1,10 @@
 zhome=$(dirname $(realpath ~/$(readlink ~/.zshrc)))
+zinstalls=$zhome/zinstalls
+
+# create zinstalls if not exist
+if [ ! -d $zinstalls ];then
+  mkdir $zinstalls
+fi
 
 # scan zpath and add to path
 if [ -f $zhome/zpath ];then
@@ -22,3 +28,4 @@ if [ -f $zhome/zsources ];then
 fi
 
 unset zhome
+unset zinstalls

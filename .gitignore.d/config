@@ -2,3 +2,6 @@
 !/.config
 !/.config/saved
 !/.config/saved/**
+!/.config/zsh
+!/.config/zsh/**
+.config/zsh/zinstalls/
