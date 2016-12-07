@@ -1,0 +1,29 @@
+
+#for f in $(dirname $(readlink -f ~/.zshrc))/zshrc.d;do
+#  source $f
+#done
+
+# dev bins
+if [ -d "/opt/dev/bin" ];then
+  PATH="/opt/dev/bin:$PATH"
+fi
+
+# set path so it includes user's private bin if it exists
+if [ -d "$home/bin" ] ; then
+  PATH="$home/bin:$PATH"
+fi
+
+export ZSH=~/.config/zsh/oh-my-zsh
+
+ZSH_THEME="agnoster"
+DEFAULT_USER=alban
+
+HYPHEN_INSENSITIVE="true"
+
+export UPDATE_ZSH_DAYS=1
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+

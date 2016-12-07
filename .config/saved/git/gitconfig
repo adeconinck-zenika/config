@@ -1,6 +1,6 @@
 [user]
-  email = noo.blaster@gmail.com
-  name = neyb
+  email = alban.deconinck@zenika.com
+  name = alban deconinck
 [core]
   editor = nvim
   autocrlf = input
