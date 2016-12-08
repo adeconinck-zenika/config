@@ -1,0 +1,7 @@
+#add path from config/paths file
+for pathCandidate in $@;do
+  pathCandidate=$(eval echo $pathCandidate)
+  if [ -d "$pathCandidate" ];then
+    export PATH="$pathCandidate:$PATH"
+  fi
+done

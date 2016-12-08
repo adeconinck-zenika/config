@@ -1,37 +1,24 @@
-zhome=$(dirname $(realpath ~/$(readlink ~/.zshrc)))
-zinstalls=$zhome/zinstalls
+function {
+  local zhome=$(dirname $(realpath ~/$(readlink ~/.zshrc)))
+  local zinstalls=$zhome/installs
 
-#create user bin dir if not any exist
-if [ ! -d ~/bin ];then
-  mkdir ~/bin
-fi
 
-# create zinstalls if not exist
-if [ ! -d $zinstalls ];then
-  mkdir $zinstalls
-fi
-
-# scan zpath and add to path
-if [ -f $zhome/zpath ];then
-  for pathCandidate in $(cat $zhome/zpath 2>/dev/null || echo);do
-    pathCandidate=$(eval echo $pathCandidate)
-    if [ -d "$pathCandidate" ];then
-      export PATH="$pathCandidate:$PATH"
-    fi
-  done
-fi
-
-# zsources
-if [ -f $zhome/zsources ];then
-  for toSource in $(cat $zhome/zsources 2>/dev/null || echo);do
-    toSource=$zhome/zinits/$toSource
-    if [ -f $toSource ];then
-      source $toSource "$(cat $toSource-config 2>/dev/null || echo)"
-    else
-      echo "$toSource not found => not sourced" >2
-    fi
-  done
-fi
-
-unset zhome
-unset zinstalls
+  # sources
+  if [ -f $zhome/sources ];then
+    for toSource in $(cat $zhome/sources 2>/dev/null || echo);do
+      local configFile=$zhome/configs/$toSource
+      local toSource=$zhome/inits/$toSource
+      if [ -f $toSource ];then
+        local configArgs=()
+        if [ -f $configFile ];then
+          while read configArg;do
+            configArgs+=("$configArg")
+          done <$configFile
+        fi
+        source $toSource $configArgs
+      else
+        echo "$toSource not found => not sourced" >2
+      fi
+    done
+  fi
+}

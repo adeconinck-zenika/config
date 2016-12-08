@@ -4,4 +4,4 @@
 !/.config/saved/**
 !/.config/zsh
 !/.config/zsh/**
-.config/zsh/zinstalls/
+.config/zsh/installs/
