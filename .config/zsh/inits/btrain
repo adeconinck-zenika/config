@@ -1,0 +1,17 @@
+local bTrainHome=$zinstalls/bullettrain
+if [ ! -d $bTrainHome  ];then
+  git clone git@github.com:caiogondim/bullet-train-oh-my-zsh-theme.git $bTrainHome
+  ln -s ../../bullettrain/bullet-train.zsh-theme $ZSH_CUSTOM/themes
+fi
+
+ZSH_THEME="bullet-train"
+
+BULLETTRAIN_CONTEXT_DEFAULT_USER=alban
+
+BULLETTRAIN_TIME_SHOW=false
+# use colored prompt
+#BULLETTRAIN_GIT_COLORIZE_DIRTY=true
+#BULLETTRAIN_GIT_UNTRACKED=" %F{red}✭%F{black}"
+#BULLETTRAIN_GIT_BG=green
+BULLETTRAIN_GIT_DIRTY=
+#BULLETTRAIN_GIT_CLEAN=

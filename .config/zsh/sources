@@ -1,5 +1,7 @@
 bindirs
 paths
+pre-omz
+btrain
 ohmyzsh
 jenv
 jabba
