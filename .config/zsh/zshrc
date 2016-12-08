@@ -24,10 +24,11 @@ fi
 # zsources
 if [ -f $zhome/zsources ];then
   for toSource in $(cat $zhome/zsources 2>/dev/null || echo);do
-    if [ -f $zhome/zinits/$toSource ];then
-      source $zhome/zinits/$toSource
+    toSource=$zhome/zinits/$toSource
+    if [ -f $toSource ];then
+      source $toSource "$(cat $toSource-config 2>/dev/null || echo)"
     else
-      echo "$zhome/zinits/$toSource not found => not sourced" >2
+      echo "$toSource not found => not sourced" >2
     fi
   done
 fi
