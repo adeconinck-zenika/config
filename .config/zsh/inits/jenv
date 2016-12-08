@@ -1,9 +1,10 @@
-jenvhome=$zinstalls/jenv
-if [ ! -d $jenvhome ];then
-  echo "installation de jenv dans $jenvhome"
-  git clone https://github.com/gcuisinier/jenv.git $jenvhome
-  ln -s $jenvhome/bin/jenv ~/bin
-fi
-unset jenvhome
+function {
+  local jenvhome=$zinstalls/jenv
+  if [ ! -d $jenvhome ];then
+    echo "installation de jenv dans $jenvhome"
+    git clone https://github.com/gcuisinier/jenv.git $jenvhome
+    ln -s $jenvhome/bin/jenv ~/bin
+  fi
 
-eval "$(jenv init -)"
+  eval "$(jenv init -)"
+}

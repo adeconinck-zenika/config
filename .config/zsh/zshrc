@@ -2,7 +2,6 @@ function {
   local zhome=$(dirname $(realpath ~/$(readlink ~/.zshrc)))
   local zinstalls=$zhome/installs
 
-
   # sources
   if [ -f $zhome/sources ];then
     for toSource in $(cat $zhome/sources 2>/dev/null || echo);do
