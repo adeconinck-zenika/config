@@ -1,12 +1,14 @@
 function {
   local zhome=$(dirname $(realpath ~/$(readlink ~/.zshrc)))
+  local zinits=$zhome/inits
+  local zconfigs=$zhome/configs
   local zinstalls=$zhome/installs
 
   # sources
   if [ -f $zhome/sources ];then
     for toSource in $(cat $zhome/sources 2>/dev/null || echo);do
-      local configFile=$zhome/configs/$toSource
-      local toSource=$zhome/inits/$toSource
+      local configFile=$zconfigs/$toSource
+      local toSource=$zinits/$toSource
       if [ -f $toSource ];then
         local configArgs=()
         if [ -f $configFile ];then
