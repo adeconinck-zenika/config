@@ -69,6 +69,24 @@
     <keyboard-shortcut first-keystroke="shift ctrl c" />
   </action>
   <action id="CopyPaths" />
+  <action id="Diff.AppendLeftSide">
+    <keyboard-shortcut first-keystroke="shift alt right" />
+  </action>
+  <action id="Diff.AppendRightSide">
+    <keyboard-shortcut first-keystroke="shift alt left" />
+  </action>
+  <action id="Diff.ApplyLeftSide">
+    <keyboard-shortcut first-keystroke="alt right" />
+  </action>
+  <action id="Diff.ApplyRightSide">
+    <keyboard-shortcut first-keystroke="alt left" />
+  </action>
+  <action id="Diff.NextConflict">
+    <keyboard-shortcut first-keystroke="ctrl alt down" />
+  </action>
+  <action id="Diff.PreviousConflict">
+    <keyboard-shortcut first-keystroke="ctrl alt up" />
+  </action>
   <action id="DuplicatesForm.SendToLeft">
     <keyboard-shortcut first-keystroke="ctrl 1" />
     <keyboard-shortcut first-keystroke="ctrl ampersand" />
@@ -177,8 +195,14 @@
     <keyboard-shortcut first-keystroke="ctrl alt quote" />
   </action>
   <action id="Images.ShowThumbnails" />
+  <action id="NextDiff">
+    <keyboard-shortcut first-keystroke="alt down" />
+  </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="ctrl page_down" />
+  </action>
+  <action id="PreviousDiff">
+    <keyboard-shortcut first-keystroke="alt up" />
   </action>
   <action id="PreviousTab">
     <keyboard-shortcut first-keystroke="ctrl page_up" />
