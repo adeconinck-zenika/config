@@ -1,6 +1,4 @@
 # add path from config/paths file
 for pathCandidate in $@;do
-  if [ -d "$pathCandidate" ];then
-    PATH="$pathCandidate:$PATH"
-  fi
+  PATH="$pathCandidate:$PATH"
 done
