@@ -1,10 +1,9 @@
-[user]
-  email = alban.deconinck@zenika.com
-  name = alban deconinck
+[include]
+  path = ~/.config/git/user
 [core]
   editor = nvim
   autocrlf = input
-  excludesfile = /home/alban/.config/git/ignore
+  excludesfile = ~/.config/git/ignore
 [push]
   default = upstream
 [alias]

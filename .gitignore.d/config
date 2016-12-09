@@ -5,3 +5,6 @@
 !/.config/zsh
 !/.config/zsh/**
 .config/zsh/installs/
+!/.config/git
+!/.config/git/**
+/.config/git/user
