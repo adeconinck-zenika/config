@@ -68,6 +68,7 @@
     <keyboard-shortcut first-keystroke="ctrl divide" />
     <keyboard-shortcut first-keystroke="shift ctrl c" />
   </action>
+  <action id="ContextHelp" />
   <action id="CopyPaths" />
   <action id="Diff.AppendLeftSide">
     <keyboard-shortcut first-keystroke="shift alt right" />
