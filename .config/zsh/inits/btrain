@@ -1,8 +1,4 @@
 local bTrainHome=$zinstalls/bullettrain
-if [ ! -d $bTrainHome  ];then
-  git clone git@github.com:caiogondim/bullet-train-oh-my-zsh-theme.git $bTrainHome
-  ln -s ../../bullettrain/bullet-train.zsh-theme $ZSH_CUSTOM/themes
-fi
 
 ZSH_THEME="bullet-train"
 

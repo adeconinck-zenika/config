@@ -1,9 +1,5 @@
 export ZSH=$zinstalls/ohmyzsh
 
-if [ ! -d $ZSH ];then
-  git clone git@github.com:robbyrussell/oh-my-zsh.git $ZSH
-fi
-
 HYPHEN_INSENSITIVE="true"
 
 export UPDATE_ZSH_DAYS=1
