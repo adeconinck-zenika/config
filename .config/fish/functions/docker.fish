@@ -1,0 +1,1 @@
+/home/alban/.config/fisherman/docker-fish-completion/docker.fish

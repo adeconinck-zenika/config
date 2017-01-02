@@ -1,0 +1,5 @@
+export ZSH_CUSTOM=$zinstalls/ohmyzsh-custom
+
+if [ ! -d $ZSH_CUSTOM/themes ];then
+  mkdir -p $ZSH_CUSTOM/themes
+fi
