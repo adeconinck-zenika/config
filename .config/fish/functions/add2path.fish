@@ -12,8 +12,7 @@ function add2path
     end
 
     # add in path if does not exist
-    set -l index (contains -i $path $PATH)
-    if [ $status -eq 0 ]
+    while set -l index (contains -i $path $PATH)
       set -e PATH[$index]
     end
     set PATH $path $PATH
