@@ -1,0 +1,1 @@
+add2path $argv

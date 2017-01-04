@@ -1,4 +1,0 @@
-# add path from config/paths file
-for pathCandidate in $@;do
-  PATH="$pathCandidate:$PATH"
-done
