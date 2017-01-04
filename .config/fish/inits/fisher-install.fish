@@ -1,1 +1,1 @@
-fisher install $argv 2>/dev/null
+fisher 2>/dev/null
