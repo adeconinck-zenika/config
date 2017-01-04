@@ -1,9 +1,0 @@
-#create user bin dir if not any exist
-if [ ! -d ~/bin ];then
-  mkdir ~/bin
-fi
-
-# create zinstalls if not exist
-if [ ! -d $zinstalls ];then
-  mkdir $zinstalls
-fi
