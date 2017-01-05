@@ -12,6 +12,7 @@ function __fish_vcsh_no_command
   end
   return 0
 end
+
 #vcsh [options] command
 #  -c     Source file prior to other configuration files
 #  -d     Enable debug mode
@@ -22,121 +23,91 @@ complete -c vcsh -n'__fish_vcsh_no_command' -s v -d'Enable verbose mode'
 
 #vcsh clone [-b branch] url [repo]
 #  clone  Clone an existing repository.
-complete -c vcsh -n'__fish_vcsh_no_command' -fa clone -d 'Clone an existing repository'
-complete -c vcsh -n'__fish_current_command_contains clone' -frs b
-complete -c vcsh -n'__fish_current_command_contains clone' -fa '(vcsh list)'
-#
-#commit Commit in all repositories
-#
+complete -c vcsh -a clone -d 'Clone an existing repository' -f -n'__fish_vcsh_no_command'
+complete -c vcsh -n'__fish_current_command_contains clone' -rfs b -d'specify branch'
+
+complete -c vcsh -a commit -d'Commit in all repositories' -f -n'__fish_vcsh_no_command'
+
 #vcsh delete repo
 #  delete Delete an existing repository.
-#
+complete -c vcsh -a delete -d 'Delete an existing repository' -f -n'__fish_vcsh_no_command'
+
 #       vcsh enter repo
-#
-#       vcsh foreach [-g] git command
-#
-#       vcsh help
-#
-#       vcsh init repo
-#
-#       vcsh list
-#
-#       vcsh list-tracked [repo]
-#
-#       vcsh list-untracked [-a] [-r] [repo]
-#
-#       vcsh pull
-#
-#       vcsh push
-#
-#       vcsh rename repo newname
-#
-#       vcsh run repo shell command
-#
-#       vcsh status [repo]
-#
-#       vcsh upgrade repo
-#
-#       vcsh version
-#
-#       vcsh which substring
-#
-#       vcsh write-gitignore repo
-#
-#       vcsh repo git command
-#
-#       vcsh repo
-#              repo   Shortcut to run vcsh enter <repo>.
-#
-#
-#
-#COMMANDS
-#
-#              If you need to clone a bundle of repositories, look into the post-clone-retired hook.
-#
-#              You can also use a single git repository with several branches. Use the -b option to specify a branch at clone time, the default is master.
-#
-#
-#
 #       enter  Enter repository; spawn new $SHELL.
-#
+complete -c vcsh -a enter -d 'Enter repository' -f -n'__fish_vcsh_no_command'
+
+#       vcsh foreach [-g] git command
 #       foreach
 #              Execute git command for every vcsh repository.
-#
 #              -g: Execute in general context.
-#
+complete -c vcsh -a foreach -d'Execute git command for every vcsh repository' -f -n'__fish_vcsh_no_command'
+
+#       vcsh help
 #       help   Display help.
-#
+complete -c vcsh -a help -d 'Display help' -f -n'__fish_vcsh_no_command'
+
+#       vcsh init repo
 #       init   Initialize an empty repository.
-#
+complete -c vcsh -a init -d 'Initialize an empty repository' -f -n'__fish_vcsh_no_command'
+
+#       vcsh list
 #       list   List all local vcsh repositories.
-#
+complete -c vcsh -a list -d 'List all local vcsh repositories' -f -n'__fish_vcsh_no_command'
+
+#       vcsh list-tracked [repo]
 #       list-tracked
 #              List all files tracked by vcsh.
-#
-#              If you want to list files tracked by a specific repository, simply append the repository´s name last.
-#
-#       list-tracked-by
-#              List files tracked by a repository.
-#
-#              This is a legacy command; you should use list-tracked <repo> instead.
-#
+complete -c vcsh -a list-tracked -d 'List all files tracked by vcsh' -f -n'__fish_vcsh_no_command'
+
+#       vcsh list-untracked [-a] [-r] [repo]
 #       list-untracked
 #              List all files NOT tracked by vcsh.
-#
 #              -a: Show all files. By default, the git ls-files --exclude-standard is called.
-#
 #              -r: Recursive mode. By default, the file list is shallow and stops at directory levels where possible.
-#
 #              $repo: List files not tracked by this specific repository.
-#
+complete -c vcsh -a list-untracked -d 'List all files NOT tracked by vcsh' -f -n'__fish_vcsh_no_command'
+
+#       vcsh pull
 #       pull   Pull from all vcsh remotes.
-#
+complete -c vcsh -a pull -d 'Pull from all vcsh remotes' -f -n'__fish_vcsh_no_command'
+
+#       vcsh push
 #       push   Push to all vcsh remotes.
-#
+complete -c vcsh -a push -d 'Push to all vcsh remotes' -f -n'__fish_vcsh_no_command'
+
+#       vcsh rename repo newname
 #       rename Rename a repository.
-#
+complete -c vcsh -a rename -d 'Rename a repository' -f -n'__fish_vcsh_no_command'
+
+#       vcsh run repo shell command
 #       run    Run command with $GIT_DIR and $GIT_WORK_TREE set. Allows you to run any and all commands without any restrictions. Use with care.
-#
-#              Please note that there is a somewhat magic feature for run. Instead of repo it accepts path, as well. Anything that has a slash in it will be assumed to be  a  path.  vcsh
-#              run will then operate on this directory instead of the one normally generated from the repository´s name. This is needed to support mr and other scripts properly and of no
-#              concern to an interactive user.
-#
+complete -c vcsh -a run -d 'Run command with $GIT_DIR and $GIT_WORK_TREE set' -f -n'__fish_vcsh_no_command'
+
+#       vcsh status [repo]
 #       status Show statuses of all/one vcsh repositories.
-#
-#       upgrade
-#              Upgrade repository to currently recommended settings.
-#
-#       version
-#              Print version information.
-#
-#       which substring
-#              Find substring in name of any tracked file.
-#
-#       write-gitignore
-#              Write .gitignore.d/repo via git ls-files.
-#
+complete -c vcsh -a status -d 'Show statuses of all/one vcsh repositories' -f -n'__fish_vcsh_no_command'
+
+#       vcsh upgrade repo
+#       upgrade Upgrade repository to currently recommended settings.
+complete -c vcsh -a upgrade -d 'Upgrade repository to currently recommended settings.' -f -n'__fish_vcsh_no_command'
+
+#       vcsh version
+#       version Print version information.
+complete -c vcsh -a version -d 'Print version information' -f -n'__fish_vcsh_no_command'
+
+#       vcsh which substring
+#       which  Find substring in name of any tracked file.
+complete -c vcsh -a which -d'Find <substring> in name of any tracked file' -f -n'__fish_vcsh_no_command'
+
+#       vcsh write-gitignore repo
+#       write-gitignore Write .gitignore.d/repo via git ls-files.
+complete -c vcsh -a write-gitignore -d 'Write .gitignore.d/repo via git ls-files' -f -n'__fish_vcsh_no_command'
+
+#       vcsh repo git command
 #       repo gitcommand
 #              Shortcut to run vcsh on a repo. Will prepend git to command.
-#
-#
+complete -c vcsh -f -n'__fish_vcsh_no_command'
+
+#       vcsh repo
+#              repo   Shortcut to run vcsh enter <repo>.
+complete -c vcsh -a '(vcsh list)' -d'enter repository' -f -n'__fish_vcsh_no_command'
