@@ -1,1 +1,1 @@
-fisher 2>/dev/null
+fisher ^/dev/null
