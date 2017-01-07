@@ -1,6 +1,6 @@
 function __fish_complete_test_contains
-  set -l debugging foreach ''
-  #set -l debugging "![^-].*"
+  set -l debugging ''
+  #set -l debugging foreach !^[^-]
   if [ "$debugging" = "$argv" ]
     echo "* debugging: $debugging" >&2
     function __fish_current_command_contains_debug
