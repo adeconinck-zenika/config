@@ -1,6 +1,6 @@
 function __fish_complete_test_contains
   set -l debugging foreach ''
-  #set -l debugging foreach '!*'
+  #set -l debugging "![^-].*"
   if [ "$debugging" = "$argv" ]
     echo "* debugging: $debugging" >&2
     function __fish_current_command_contains_debug
@@ -12,6 +12,7 @@ function __fish_complete_test_contains
   end
 
   set -l cmd (commandline -opc)
+  set -e cmd[1]
   set -l searchedElements $argv
   set -l searchedIndex 1
   set -l allSearchedConsumed false
@@ -51,7 +52,7 @@ function __fish_complete_test_contains
     # if match any excluded, return 2
     __fish_current_command_contains_debug " searching excluded elements"
     for excluded in $excludedElements
-      if string match -q -- $excluded $cmdToken
+      if string match -qr -- $excluded $cmdToken
       __fish_current_command_contains_debug "  /!\\ \ '$cmdToken' excluded by '$excluded'"
         return 2
       end
@@ -67,7 +68,7 @@ function __fish_complete_test_contains
     __fish_current_command_contains_debug " searching $currentSearched"
     if begin
           [ $allSearchedConsumed = false ]
-          and string match -q -- $currentSearched $cmdToken
+          and string match -qr -- $currentSearched $cmdToken
        end
       __fish_current_command_contains_debug "  found !"
       set searchedIndex (math $searchedIndex + 1)
