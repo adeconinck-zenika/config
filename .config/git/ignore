@@ -1,1 +1,9 @@
+#jenv
 .java-version
+
+#idea
+/.idea
+
+#gradle
+/.gradle
+/build
