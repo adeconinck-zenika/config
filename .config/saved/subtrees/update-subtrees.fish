@@ -5,6 +5,9 @@ function update-subtrees
   end
   set -l relSubtreesFolder .config/saved/subtrees
   set -l subtreesFolder ~/$relSubtreesFolder
+
+  rm ~/.config/fish/subtreesFunctions/*
+  
   for subtreeConf in (cat $subtreesFolder/conf)
     set subtreeConf (string split ' ' "$subtreeConf")
     set -l currSubtreeFolder $subtreesFolder/$subtreeConf[1]
@@ -17,8 +20,6 @@ function update-subtrees
       echo creating...
       git subtree add --prefix "$relSubtreesFolder/$subtreeConf[1]" $subtreeConf[2..-1] --squash
     end
-
-    rm ~/.config/fish/subtreesFunctions/*
 
     for fscript in $currSubtreeFolder/*.fish
       if [ (string match 'fish_*' (basename $fscript)) ]
