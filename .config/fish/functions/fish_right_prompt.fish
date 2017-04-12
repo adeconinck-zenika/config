@@ -1,0 +1,1 @@
+/home/alban/.config/saved/subtrees/bobthefish/fish_right_prompt.fish
