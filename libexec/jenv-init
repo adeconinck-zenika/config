@@ -1,0 +1,112 @@
+#!/usr/bin/env bash
+# Summary: Configure the shell environment for jenv
+# Usage: eval "$(jenv init - [--no-rehash] [<shell>])"
+
+set -e
+[ -n "$JENV_DEBUG" ] && set -x
+
+print=""
+no_rehash=""
+for args in "$@"
+do
+  if [ "$args" = "-" ]; then
+    print=1
+		shift
+  fi
+
+  if [ "$args" = "--no-rehash" ]; then
+    no_rehash=1
+    shift
+  fi
+done
+
+shell="$1"
+if [ -z "$shell" ]; then
+  shell="$(basename "$SHELL")"
+fi
+
+resolve_link() {
+  $(type -p greadlink readlink | head -1) $1
+}
+
+abs_dirname() {
+  local cwd="$(pwd)"
+  local path="$1"
+
+  while [ -n "$path" ]; do
+    cd "${path%/*}"
+    local name="${path##*/}"
+    path="$(resolve_link "$name" || true)"
+  done
+
+  pwd
+  cd "$cwd"
+}
+
+root="$(abs_dirname "$0")/.."
+
+if [ -z "$print" ]; then
+  case "$shell" in
+  bash )
+    profile='~/.bash_profile'
+    ;;
+  zsh )
+    profile='~/.zshrc'
+    ;;
+  ksh )
+    profile='~/.profile'
+    ;;
+  * )
+    profile='your profile'
+    ;;
+  esac
+
+  { echo "# Load jenv automatically by adding"
+    echo "# the following to ${profile}:"
+    echo
+    echo 'eval "$(jenv init -)"'
+    echo
+  } >&2
+
+  exit 1
+fi
+
+mkdir -p "${JENV_ROOT}/"{shims,plugins,versions}
+
+echo 'export PATH="'${JENV_ROOT}'/shims:${PATH}"'
+
+case "$shell" in
+bash | zsh )
+  echo "source \"$root/completions/jenv.${shell}\""
+  ;;
+esac
+
+if [ -z "$no_rehash" ]; then
+  echo 'jenv rehash 2>/dev/null'
+fi
+
+echo "export JENV_LOADED=1"
+echo "unset JAVA_HOME"
+
+for script in $(jenv-hooks init $shell); do
+  echo "source \"$script\""
+done
+
+commands=(`jenv-commands --sh`)
+IFS="|"
+cat <<EOS
+jenv() {
+  typeset command
+  command="\$1"
+  if [ "\$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "\$command" in
+  ${commands[*]})
+    eval \`jenv "sh-\$command" "\$@"\`;;
+  *)
+    command jenv "\$command" "\$@";;
+  esac
+}
+EOS
