@@ -14,4 +14,4 @@ always-show-menus=false
 preauthorized-domains=@as []
 
 [unity/launcher]
-favorites=['application://gnome-terminal.desktop', 'application://google-chrome.desktop', 'application://jetbrains-idea.desktop', 'application://org.gnome.Nautilus.desktop', 'application://atom.desktop', 'unity://running-apps', 'unity://devices']
+favorites=['application://org.gnome.Terminal.desktop', 'application://google-chrome.desktop', 'application://jetbrains-idea.desktop', 'application://org.gnome.Nautilus.desktop', 'application://atom.desktop', 'unity://running-apps', 'unity://devices']
