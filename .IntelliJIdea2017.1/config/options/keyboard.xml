@@ -1,1 +1,5 @@
-/home/alban/.config/saved/idea/config/options/keyboard.xml
+<application>
+  <component name="KeyboardSettings">
+    <option name="USE_NON_ENGLISH_KEYBOARD" value="true" />
+  </component>
+</application>
