@@ -29,6 +29,6 @@
   trustExitCode = true
   keepBackup = false
 [pager]
-	log = less -+F -+X
+  log = less -+F -+X
 [fetch]
-	prune = true
+  prune = true
