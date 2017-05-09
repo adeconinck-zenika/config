@@ -12,3 +12,17 @@
 !/.config/fish/inits/**
 !/.config/fish/my*
 !/.config/fish/my*/**
+!/.IntelliJIdea2017.1
+!/.IntelliJIdea2017.1/config
+!/.IntelliJIdea2017.1/config/codestyles
+!/.IntelliJIdea2017.1/config/codestyles/**
+!/.IntelliJIdea2017.1/config/disabled_plugins.txt
+!/.IntelliJIdea2017.1/config/fileTemplates
+!/.IntelliJIdea2017.1/config/fileTemplates/**
+!/.IntelliJIdea2017.1/config/keymaps
+!/.IntelliJIdea2017.1/config/keymaps/**
+!/.IntelliJIdea2017.1/config/templates
+!/.IntelliJIdea2017.1/config/templates/**
+
+#codestyles  disabled_plugins.txt  fileTemplates  idea.key  keymaps  options  plugins  port  port.lock  tasks  templates
+

@@ -1,0 +1,9 @@
+<templateSet group="Kotlin">
+  <template name="test" value="@org.junit.Test fun `$NAME$`() {&#10;    $END$&#10;}" description="add junit test" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="_Should_" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+      <option name="KOTLIN_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>
