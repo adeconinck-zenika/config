@@ -29,5 +29,7 @@
   'ctrl-shift-w': 'tabs:close-all-tabs'
   'ctrl-alt-w': 'tabs:close-other-tabs'
   'shift-enter': 'editor:newline-above'
+
 '.platform-win32, .platform-linux':
-  'alt-t': 'tree-view:toggle-focus'
+  'alt-&': 'tree-view:toggle-focus'
+  'ctrl-shift-n': 'fuzzy-finder:toggle-file-finder'
