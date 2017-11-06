@@ -1,0 +1,6 @@
+<profile version="1.0">
+  <option name="myName" value="Default" />
+  <inspection_tool class="EnumEntryName" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+    <option name="namePattern" value="([a-z][A-Za-z\d]*|[A-Z][A-Z_\d]*)" />
+  </inspection_tool>
+</profile>
